@@ -31,8 +31,8 @@ rest.getUsers = function(){
         .catch(ex=> ex)
         ;
 }
-rest.find = function (name,sirname) {
-    return  fetch(`api/SampleData/FindByName/?name=${name}&sirname=${sirname}`,{
+rest.find = function (username,password) {
+    return  fetch(`api/SampleData/Login/?name=${username}&password=${password}`,{
         method: 'GET',
     })
         .then(data => data.json())

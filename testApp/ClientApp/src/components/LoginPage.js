@@ -3,6 +3,11 @@ import Input from 'rambler-ui/Input'
 import Button from 'rambler-ui/Button'
 import '../style/Login.css'
 import FormGroup from 'rambler-ui/FormGroup'
+import {Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {actionCreators} from "../store/UsersReducer";
+
 class LoginPage extends Component {
     constructor(props, context) {
         super(props, context);
@@ -13,12 +18,12 @@ class LoginPage extends Component {
     }
 
     onChange = (tag)=> (e)=>this.setState({[`${tag}`]: e.target.value});
-    click = ()=> {
-
+    click = () => {
+        this.props.Login(this.state.UserName,this.state.password)
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.props);
         return (
             <div className={'login-container'}>
             <FormGroup label='User Name'>
@@ -46,9 +51,17 @@ class LoginPage extends Component {
                 >
                     Confirm Button
                 </Button>
+            <Link
+                style={{marginLeft: '45%'}}
+                to={'/Registration'}>
+                Register
+            </Link>
             </div>
         );
     }
 }
 
-export default LoginPage;
+export default connect(
+    state => state,
+    dispatch => bindActionCreators(actionCreators, dispatch)
+)(LoginPage);

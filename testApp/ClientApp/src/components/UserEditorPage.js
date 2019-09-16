@@ -1,67 +1,25 @@
 import React, {Component} from 'react';
-import FormGroup from "rambler-ui/FormGroup";
-import Input from "rambler-ui/Input";
-import Button from "rambler-ui/Button";
-
+import Field from "./Field";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {actionCreators} from "../store/UsersReducer";
 class UserEditorPage extends Component {
+
     render() {
-        return (
-                <div className={'login-container'}>
-                    <FormGroup label='User Name'>
-                        <Input
-                            type="text"
-                            value={this.state.UserName}
-                            onChange={this.onChange('UserName')}
-                            placeholder="User Name"
-                            variation={"regular"}
-                        />
-                    </FormGroup>
-                    <FormGroup label='Firs Name'>
-                        <Input
-                            type="text"
-                            value={this.state.UserName}
-                            onChange={this.onChange('UserName')}
-                            placeholder="User Name"
-                            variation={"regular"}
-                        />
-                    </FormGroup>
-                    <FormGroup label='Last Name'>
-                        <Input
-                            type="text"
-                            value={this.state.UserName}
-                            onChange={this.onChange('UserName')}
-                            placeholder="User Name"
-                            variation={"regular"}
-                        />
-                    </FormGroup>
-                    <FormGroup label='Email'>
-                        <Input
-                            type="email"
-                            value={this.state.UserName}
-                            onChange={this.onChange('UserName')}
-                            placeholder="User Name"
-                            variation={"regular"}
-                        />
-                    </FormGroup>
-                    <FormGroup label='password'>
-                        <Input
-                            type="password"
-                            value={this.state.Password}
-                            onChange={this.onChange('Password')}
-                            placeholder="Password"
-                            variation={"regular"}
-                        />
-                    </FormGroup>
-                    <Button
-                        style={{marginTop: '2%'}}
-                        type={'primary'}
-                        onClick={this.click}
-                    >
-                        Confirm Button
-                    </Button>
-                </div>
-        );
+        console.log(this.props)
+    return(
+        <div>
+            <Field value={'Name'} label={'First Name'}/>
+            <Field value={'Name'} label={'Last Name'}/>
+            <Field value={'Name'} label={'Password'}/>
+            <Field value={'Name'} label={'Email'}/>
+        </div>
+        )
     }
 }
 
-export default UserEditorPage;
+export default
+connect(
+    state => state,
+    dispatch => bindActionCreators(actionCreators, dispatch)
+)(UserEditorPage);

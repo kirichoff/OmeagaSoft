@@ -4,16 +4,16 @@ import rest from '../rest'
 class TestCompponent extends Component {
 
     componentWillMount() {
-        const user = {
-          UserName: "qwe",
-          FirstName:  "sss",
-          LastName: "ss",
-          Password: "bbb",
-          Email: "trr",
-          Type: true,
-          StartDate: new Date()
-        }
-        rest.Modify(user,'add')
+        // const user = {
+        //   UserName: "qwe",
+        //   FirstName:  "sss",
+        //   LastName: "ss",
+        //   Password: "bbb",
+        //   Email: "trr",
+        //   Type: true,
+        //   StartDate: new Date()
+        // }
+        // rest.Modify(user,'add')
     }
 
     cl =()=>{
