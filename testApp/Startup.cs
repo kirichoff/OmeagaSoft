@@ -22,8 +22,10 @@ namespace testApp
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<EmailSender>();
 
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+       
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
