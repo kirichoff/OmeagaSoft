@@ -1,0 +1,8 @@
+.table-header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.center{
+    margin: auto 1%;
+}

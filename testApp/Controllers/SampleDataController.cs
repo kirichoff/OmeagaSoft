@@ -16,9 +16,12 @@ namespace testApp.Controllers
         {
             try
             {
+                var us = JsonConvert.DeserializeObject<User>(user);
                 db.Users.Add(
-                    JsonConvert.DeserializeObject<User>(user)
+                    us
                     );
+                
+                db.journal.Add(new Journal { Action = "Register", Date = DateTime.Now, UserName = us.UserName });
                 db.SaveChanges();
                 return true;                
             }
@@ -32,9 +35,11 @@ namespace testApp.Controllers
         {
             try
             {
-                db.Users.Update(
-                    JsonConvert.DeserializeObject<User>(user)
+                var us = JsonConvert.DeserializeObject<User>(user);
+                    db.Users.Update(
+                    us
                     );
+                db.journal.Add(new Journal { Action = "Update", Date = DateTime.Now, UserName =  us.UserName });
                 db.SaveChanges();
                 return true;
             }
@@ -51,6 +56,8 @@ namespace testApp.Controllers
             try
             {
                 var u = from t in db.Users where t.UserName == name && t.Password == password select t;
+                db.journal.Add(new Journal { Action = "Login", Date = DateTime.Now, UserName =  u.FirstOrDefault().UserName });
+                db.SaveChanges();
                 return JsonConvert.SerializeObject(
                     u.FirstOrDefault()
                     );
@@ -61,7 +68,19 @@ namespace testApp.Controllers
             }
         }
 
-
+        [HttpGet("[action]")]
+        public string GetJournal()
+        {
+            try
+            {
+                return JsonConvert.SerializeObject(db.journal.ToArray());
+            }
+            catch
+            {
+                return "false";
+            }
+        }
+ 
         [HttpGet("[action]")]
         public string GetAllUsers()
         {

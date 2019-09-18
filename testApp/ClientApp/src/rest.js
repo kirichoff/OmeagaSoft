@@ -31,6 +31,16 @@ rest.getUsers = function(){
         .catch(ex=> ex)
         ;
 }
+rest.getJournal = function(){
+    return  fetch(`api/SampleData/GetJournal/`,{
+        method: 'GET',
+    })
+        .then(data => data.json())
+        .catch(ex=> ex)
+        ;
+}
+
+
 rest.find = function (username,password) {
     return  fetch(`api/SampleData/Login/?name=${username}&password=${password}`,{
         method: 'GET',

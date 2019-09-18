@@ -19,11 +19,13 @@ class LoginPage extends Component {
 
     onChange = (tag)=> (e)=>this.setState({[`${tag}`]: e.target.value});
     click = () => {
-        this.props.Login(this.state.UserName,this.state.password)
+        this.props.Login(this.state.UserName,this.state.Password)
+
     }
 
     render() {
         console.log(this.props);
+        if(this.props.User.User) this.props.history.push('/Editor')
         return (
             <div className={'login-container'}>
             <FormGroup label='User Name'>
@@ -44,6 +46,8 @@ class LoginPage extends Component {
                     variation={"regular"}
                 />
                 </FormGroup>
+                <div className={'btn-container'} >
+
                 <Button
                     style={{marginTop: '2%'}}
                     type={'primary'}
@@ -51,11 +55,19 @@ class LoginPage extends Component {
                 >
                     Confirm Button
                 </Button>
+
             <Link
-                style={{marginLeft: '45%'}}
+
                 to={'/Registration'}>
-                Register
+                <Button
+                    style={{marginTop: '2%'}}
+                    type={'primary'}
+                    onClick={this.click}
+                >
+                  Register
+                </Button>
             </Link>
+                </div>
             </div>
         );
     }

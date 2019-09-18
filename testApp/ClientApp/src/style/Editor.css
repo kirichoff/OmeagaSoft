@@ -1,0 +1,12 @@
+.editor-container{
+    margin-top: 2%;
+    padding: 7vh 38vw;
+}
+
+.text-width{
+    padding-right: 11vw;
+    text-align: center;
+}
+.input-field{
+    width: 230%;
+}

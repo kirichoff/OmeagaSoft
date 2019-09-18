@@ -4,8 +4,6 @@ const initialState = {}
 
 export const actionCreators = {
   Login: (userName,password) => async (dispatch, getState) => {
-
-
     const user = await rest.find(userName,password);
     dispatch({ type: "LOGIN",User: user });
   },
@@ -28,7 +26,8 @@ export const actionCreators = {
         StartDate: new Date()
         }
 
-       rest.Modify(user,'add')
+       let res = await rest.Modify(user,'add')
+      dispatch({type:'REGISTER_TRUE',res: res })
     },
     Edit: ({
              Password,
@@ -37,28 +36,41 @@ export const actionCreators = {
              LastName,
              Email}
     ) => async (dispatch, getState) =>{
-
-    let user = getState().User
+    console.log('Edit',getState())
+    let user = getState().User.User
 
       user.FirstName = FirstName? FirstName : user.FirstName
       user.Password = Password? Password : user.Password
       user.LastName = LastName? LastName : user.LastName
       user.Email = Email? Email : user.Email
-      user.Type = Email? objectValue ==='Admin' : user.Type
+      user.Type = objectValue? objectValue ==='Admin' : user.Type
 
       rest.Modify(user,'update')
-    }
-
+    },
+    getJournal: ()=> async (dispatch,getState)=>{
+        const journal = await rest.getJournal();
+        dispatch({type: 'JOURNAL',journal: journal })
+        }
 
 };
 
 export const reducer = (state, action) => {
   state = state || initialState;
 
-  if (action.type === "LOGIN") {
-    return {
-      User: action.User
-    };
+  switch (action.type) {
+      case "LOGIN":
+          return {
+          ...state,
+          User: action.User
+      };
+      case 'REGISTER_TRUE':  return {
+          ...state,
+          isRegister: action.res
+      }
+      case 'JOURNAL' : return {
+          ...state,
+          Journal: action.journal
+      }
   }
   return state;
 };

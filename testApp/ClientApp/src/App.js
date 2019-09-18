@@ -8,17 +8,17 @@ import UserEditorPage from "./components/UserEditorPage";
 import AdministrationPage from "./components/AdministrationPage";
 import {Router} from "react-router-dom";
 export default (props) => (
-<Router history={props.history}>
+
     <ApplyTheme>
       <div>
 
-      <Route path='/test' component={TestCompponent} />
-      <Route path='/Login' component={LoginPage} />
-      <Route path='/Registration' component={RegistrationPage} />
-      <Route path='/Editor' component={UserEditorPage} />
-    <Route path='/Admin' component={AdministrationPage} />
+      <Route exact path='/test' component={TestCompponent} />
+      <Route  exact path='/' component={LoginPage} />
+      <Route exact path='/Registration' component={RegistrationPage} />
+      <Route exact path='/Editor' component={UserEditorPage} />
+    <Route  exact path='/Admin' component={AdministrationPage} />
 
       </div>
     </ApplyTheme>
-</Router>
+
 );

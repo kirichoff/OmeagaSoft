@@ -5,6 +5,7 @@ namespace testApp
     public class AppContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Journal> journal { get; set; }
         public AppContext()    
         {
             Database.EnsureCreated();        
@@ -14,6 +15,9 @@ namespace testApp
         {
             optionsBuilder.UseSqlite("Filename=App.db");
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();                
+        }
     }
 }
