@@ -7,18 +7,18 @@ import RegistrationPage from "./components/RegistrationPage";
 import UserEditorPage from "./components/UserEditorPage";
 import AdministrationPage from "./components/AdministrationPage";
 import {Router} from "react-router-dom";
+import Layout from "./components/Layout";
 export default (props) => (
 
     <ApplyTheme>
-      <div>
-
+      <Layout>
       <Route exact path='/test' component={TestCompponent} />
       <Route  exact path='/' component={LoginPage} />
+          <Route  exact path='/Login' component={LoginPage} />
       <Route exact path='/Registration' component={RegistrationPage} />
       <Route exact path='/Editor' component={UserEditorPage} />
     <Route  exact path='/Admin' component={AdministrationPage} />
-
-      </div>
+      </Layout>
     </ApplyTheme>
 
 );

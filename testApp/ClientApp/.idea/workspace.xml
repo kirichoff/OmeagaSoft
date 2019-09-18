@@ -2,30 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmailMatch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sort.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storeHistory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/Admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/Editor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/Layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/db.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/db.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../App.db" beforeDir="false" afterPath="$PROJECT_DIR$/../App.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AdministrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdministrationPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegistrationPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UserEditorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserEditorPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/UsersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Registratinon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Registratinon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/AppContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../model/AppContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../model/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../testApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../testApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storeHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/storeHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -63,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AAK\source\repos\testApp\testApp\ClientApp\src\components" />
       <recent name="C:\Users\kirill\Desktop\OmeagaSoft\testApp\ClientApp\src" />
     </key>
   </component>
@@ -91,6 +87,7 @@
       <workItem from="1568636400382" duration="1410000" />
       <workItem from="1568639241763" duration="11035000" />
       <workItem from="1568744278399" duration="24566000" />
+      <workItem from="1568808090717" duration="6560000" />
     </task>
     <servers />
   </component>
@@ -102,7 +99,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

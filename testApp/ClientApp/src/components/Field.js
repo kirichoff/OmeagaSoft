@@ -26,7 +26,7 @@ class Field extends Component {
         if (this.props.type !=='email')
             this.props.onConfirm({[`${this.props.label}`] : this.state.value})
 
-        this.setState({edit: false,})
+        this.setState({edit: this.props.isError ,})
     }
 
 
@@ -56,9 +56,9 @@ class Field extends Component {
                             </div>
                             :
                             <div className={'input-field'}>
-                                <InputStatus type="error" message={'error'}  >
+                                <InputStatus type="error" message={this.props.isError? 'error' : ''}  >
                             <Input
-                                status={'error'}
+                                status={this.props.isError? 'error' : null}
                                 type={type}
                                 style={{width: '40%'}}
                                 value={this.state.value}

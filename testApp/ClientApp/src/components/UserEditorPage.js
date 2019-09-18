@@ -11,18 +11,22 @@ class UserEditorPage extends Component {
         super(props, context);
 
         this.state = {
-            Type: 'User'
+            Type: 'User',
+            error: false
         }
     }
 
 
     onChange = (e)=> {
-        this.props.Edit({objectValue: this.state.Type})
-            this.setState({Type: e.target.value})
+        console.log('E',e.target.value)
+        this.props.Edit({objectValue: e.target.value})
     }
 
-    confirm = e =>{
-        this.props.Edit({...e})
+     confirm  = e  => {
+        console.log('Edit',e);
+        this.props.Edit({...e}).then(
+            // res=> res? this.props.Login(this.state.UserName,this.state.Password) : null
+        )
     }
 
     render() {
@@ -34,10 +38,10 @@ class UserEditorPage extends Component {
             {
                 User.UserName?
                     <div>
-                <Field onConfirm={this.confirm} value={User.FirstName} type={'text'} label={'FirstName'}/>
-            <Field onConfirm={this.confirm} value={User.LastName} type={'text'} label={'LastName'}/>
-            <Field  onConfirm={this.confirm} value={User.Password} type={'password'} label={'Password'}/>
-            <Field  onConfirm={this.confirm} value={User.Email} type={'email'} label={'Email'}/>
+                        <Field isError={this.state.error} onConfirm={this.confirm} value={User.FirstName} type={'text'} label={'FirstName'}/>
+            <Field isError={this.state.error} onConfirm={this.confirm} value={User.LastName} type={'text'} label={'LastName'}/>
+            <Field isError={this.state.error} onConfirm={this.confirm} value={User.Password} type={'password'} label={'Password'}/>
+            <Field isError={this.state.error}  onConfirm={this.confirm} value={User.Email} type={'email'} label={'Email'}/>
 
             <RadioButtonGroup
                 style={{marginBottom: 40, maxWidth: 300}}
@@ -52,7 +56,8 @@ class UserEditorPage extends Component {
                 </RadioButton>
             </RadioButtonGroup>
 
-                       <Link to={'Admin'}>Admin Page</Link>
+                       <Link to={'/Admin'}>Admin Page</Link>
+                        <Link to={'/'}>Log Out</Link>
 
                     </div>:
                 <div>

@@ -44,8 +44,15 @@ export const actionCreators = {
       user.LastName = LastName? LastName : user.LastName
       user.Email = Email? Email : user.Email
       user.Type = objectValue? objectValue ==='Admin' : user.Type
+        console.log('USER',user)
+      let res = await rest.Modify(user,'update')
+        if (res){
+             user = await rest.find(user.UserName,user.Password);
+             console.log('USER@',user)
+            dispatch({type: 'LOGIN',User: user})
+        }
 
-      rest.Modify(user,'update')
+        return res
     },
     getJournal: ()=> async (dispatch,getState)=>{
         const journal = await rest.getJournal();
