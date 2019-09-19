@@ -22,7 +22,15 @@ namespace testApp
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddTransient<EmailSender>();
+            AppContext app = new AppContext();
+
+            EmailSender sender = new EmailSender(app);
+
+            services.AddSingleton<EmailSender>(sender);
+
+            services.AddSingleton<AppContext>(app);
+
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
        

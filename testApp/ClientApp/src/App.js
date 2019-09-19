@@ -11,7 +11,7 @@ import Layout from "./components/Layout";
 export default (props) => (
 
     <ApplyTheme>
-      <Layout>
+      <Layout history={props.history}>
       <Route exact path='/test' component={TestCompponent} />
       <Route  exact path='/' component={LoginPage} />
           <Route  exact path='/Login' component={LoginPage} />

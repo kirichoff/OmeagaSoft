@@ -7,7 +7,8 @@ using System.ComponentModel.DataAnnotations;
 namespace testApp
 {
     public class User: ICloneable
-    {
+    {     
+
         public int Id { get; set; }
         [Required]
         public string UserName { get; set; }
@@ -26,6 +27,6 @@ namespace testApp
         public object Clone()
         {
             return this.MemberwiseClone();
-        }
+        }     
     }
 }

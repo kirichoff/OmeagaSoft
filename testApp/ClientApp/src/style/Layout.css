@@ -1,4 +1,11 @@
 .Layout{
-    margin-left: 38%;
-    margin-top: 5%;
+    /*margin-left: 38%;*/
+    /*margin-top: 5%;*/
+}
+.layout-container{
+    padding-top: 4%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
 }

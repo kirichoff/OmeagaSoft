@@ -17,7 +17,7 @@ class AdministrationPage extends Component {
         this.state={
             value: '',
             selector: '',
-            ByDate: true,
+            ByDate: false,
         }
     }
 
@@ -25,7 +25,7 @@ class AdministrationPage extends Component {
     componentWillMount() {
         this.props.getJournal()
     }
-    dateChange = ()=> this.setState({selector: '',value: '',ByDate: !this.state.ByDate});
+    dateChange = ()=> this.setState({ByDate: !this.state.ByDate});
     change = (e)=> this.setState({value: e.target.value})
     changeS =(e)=> this.setState({selector:  e })
 
@@ -35,18 +35,23 @@ class AdministrationPage extends Component {
         let User = this.props.User.User || {}
 
         let journal = this.props.User.Journal !== 'false' && this.props.User.Journal?  this.props.User.Journal: []
+
+        let sorted = journal;
+
         if (   this.state.value !== '' && this.state.selector === ''){
-            sort.byName(journal,this.state.value)
+            sorted = sort.byName(journal,this.state.value)
+            if (this.state.ByDate) sorted = sort.ByDate(sorted)
         }
         if( (this.state.selector !== '') && ( this.state.value === '')){
-            sort.byActionAndName(journal,this.state.selector,this.state.value);
+            sorted = sort.byAction(sorted,this.state.selector)
+            if (this.state.ByDate) sorted = sort.ByDate(sorted)
         }
         if( (this.state.selector) !== '' && (this.state.value !== '')){
-            sort.byActionAndName(journal,this.state.selector,this.state.value);
+            sorted = sort.byName(journal,this.state.value)
+            sorted = sort.byAction(sorted,this.state.selector)
+            if (this.state.ByDate) sorted = sort.ByDate(sorted)
         }
-        if(this.state.ByDate){
-            sort.ByDate(journal)
-        }
+        if (this.state.ByDate) sorted = sort.ByDate(sorted)
 
         console.log(User)
 
@@ -105,7 +110,7 @@ class AdministrationPage extends Component {
                     </thead>
                     <tbody>
                     {
-                        journal.map(
+                        sorted.map(
                         k=>
                             <tr key={k.Id}>
                                 <th>{k.UserName || ''}</th>
@@ -119,7 +124,7 @@ class AdministrationPage extends Component {
                     </tbody>
                 </Table>
               :
-                  <div>
+                  <div style={{margin: 'auto',textAlign: 'center',marginTop: '20%'}} >
                   Please <Link to ={'/'}>Login</Link>  in or <Link to ={'/Registration'}>Register</Link>
                   </div>
               }

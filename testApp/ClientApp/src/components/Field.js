@@ -4,7 +4,7 @@ import Input from "rambler-ui/Input";
 import * as icons from "rambler-ui/icons/forms";
 import Button from "rambler-ui/Button";
 import InputStatus from 'rambler-ui/InputStatus'
-import EmailMatch from "../EmailMatch";
+import {EmailMatch, PasswordMatch} from "../regexFunctions";
 const Edit = icons['EditIcon'];
 const Clear = icons['ClearIcon'];
 const Check = icons['TickIcon']
@@ -14,19 +14,31 @@ class Field extends Component {
         super(props, context);
         this.state={
             edit: false,
-            value: ''
+            value: '',
+            error: false
         }
     }
     onChange = (e)=> this.setState({value: e.target.value})
     togle =()=> this.setState({edit: !this.state.edit})
     Confirm =()=>{
-        if(this.props.type==='email' && EmailMatch( this.state.value) ){
 
+        switch (this.props.type){
+            case 'email':
+                if (EmailMatch( this.state.value))
+                    {this.setState({edit: false ,});
+                this.props.onConfirm({[`${this.props.label}`] : this.state.value})}
+            else
+                this.setState({error: true});
+            break;
+            case 'password': if (PasswordMatch(this.state.value))
+                {this.setState({edit: false,});
+                this.props.onConfirm({[`${this.props.label}`] : this.state.value})}
+            else
+                this.setState({error: true});
+            break;
+            default:  this.props.onConfirm({[`${this.props.label}`] : this.state.value})
         }
-        if (this.props.type !=='email')
-            this.props.onConfirm({[`${this.props.label}`] : this.state.value})
 
-        this.setState({edit: this.props.isError ,})
     }
 
 
@@ -45,7 +57,8 @@ class Field extends Component {
 
                                 <div
                                     className={'text-width'}
-                                >{this.props.value}
+                                >
+                                    {this.props.value}
                                 </div>
                                 <Button
                                     icon={<Edit/>}
@@ -56,11 +69,11 @@ class Field extends Component {
                             </div>
                             :
                             <div className={'input-field'}>
-                                <InputStatus type="error" message={this.props.isError? 'error' : ''}  >
+                                <InputStatus type="error" message={this.state.error? 'incorrect' : ''}  >
                             <Input
-                                status={this.props.isError? 'error' : null}
+                                status={this.state.error? 'error' : null}
                                 type={type}
-                                style={{width: '40%'}}
+                                style={{width: '100%'}}
                                 value={this.state.value}
                                 onChange={this.onChange}
                                 placeholder="User Name"

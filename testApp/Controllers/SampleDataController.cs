@@ -9,7 +9,13 @@ namespace testApp.Controllers
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        AppContext db = new AppContext();
+        AppContext db;
+        EmailSender sender;
+        public SampleDataController(AppContext context,EmailSender send)
+        {
+            db = context;
+            sender = send;
+        }
 
         [HttpPost("[action]")]
         public bool AddUser(string user)
@@ -36,14 +42,15 @@ namespace testApp.Controllers
             try
             {
                 var us = JsonConvert.DeserializeObject<User>(user);
-                    db.Users.Update(
-                    us
-                    );
+                var userq = db.Users.Find(us.Id);
+                db.Users.Attach(userq);
+                db.Users.Remove(userq);
+                db.Users.Add(us);                      
                 db.journal.Add(new Journal { Action = "Update", Date = DateTime.Now, UserName =  us.UserName });
                 db.SaveChanges();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
                 return false;
             }

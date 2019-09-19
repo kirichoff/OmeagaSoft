@@ -23,9 +23,8 @@ class UserEditorPage extends Component {
     }
 
      confirm  = e  => {
-        console.log('Edit',e);
         this.props.Edit({...e}).then(
-            // res=> res? this.props.Login(this.state.UserName,this.state.Password) : null
+            res=> res? console.log('res') : null
         )
     }
 
@@ -37,7 +36,7 @@ class UserEditorPage extends Component {
         <div className={'editor-container'} >
             {
                 User.UserName?
-                    <div>
+                    <div style={{width: '100%'}}>
                         <Field isError={this.state.error} onConfirm={this.confirm} value={User.FirstName} type={'text'} label={'FirstName'}/>
             <Field isError={this.state.error} onConfirm={this.confirm} value={User.LastName} type={'text'} label={'LastName'}/>
             <Field isError={this.state.error} onConfirm={this.confirm} value={User.Password} type={'password'} label={'Password'}/>
@@ -55,18 +54,11 @@ class UserEditorPage extends Component {
                     User
                 </RadioButton>
             </RadioButtonGroup>
-
-                       <Link to={'/Admin'}>Admin Page</Link>
-                        <Link to={'/'}>Log Out</Link>
-
                     </div>:
-                <div>
+                <div style={{textAlign:'center'}} >
                 Please <Link to ={'/'}>Login</Link>  in or <Link to ={'/Registration'}>Register</Link>
                 </div>
             }
-
-
-
         </div>
         )
     }

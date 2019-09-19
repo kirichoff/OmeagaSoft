@@ -21,14 +21,18 @@ class LoginPage extends Component {
 
     onChange = (tag)=> (e)=>this.setState({[`${tag}`]: e.target.value});
     click = () => {
-        this.props.Login(this.state.UserName,this.state.Password)
-
+        this.props.Login(this.state.UserName,this.state.Password).then(
+        k=> {if(this.props.User.User) this.props.history.push('/Editor')}
+        )
     }
+
+
+
 
     render() {
         console.log(this.props);
 
-        if(this.props.User.User) true.props.history.push('/Editor')
+
         return (
             <div className={'login-container'}>
             <FormGroup label='User Name'>

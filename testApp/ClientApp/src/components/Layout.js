@@ -14,12 +14,11 @@ class Layout extends Component {
     render() {
         console.log(this.props)
         console.log( )
-        // let path = this.props.routing.location.pathname || ''
-        // path = path.slice(1);
-        let path='';
-        console.log('Path',path)
+        let path = this.props.history.location.pathname || ''
+        path = path.slice(1);
+
         return (
-            <div>
+            <div className={'layout-container'} >
 
                 <div className={'Layout'} >
                 <Tabs value={path===''? 'Login' : path}  >
