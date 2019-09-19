@@ -1,42 +1,36 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-namespace testApp.Controllers
-{
-    [Route("api/[controller]")]
+namespace testApp.Controllers {
+	[Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        AppContext db;
-        EmailSender sender;
-        public SampleDataController(AppContext context,EmailSender send)
+        private AppContext db;
+
+        public SampleDataController(AppContext context)
         {
             db = context;
-            sender = send;
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool AddUser(string user)
         {
             try
             {
                 var us = JsonConvert.DeserializeObject<User>(user);
-                db.Users.Add(
-                    us
-                    );
-                
+
+                db.Users.Add(us);                
                 db.journal.Add(new Journal { Action = "Register", Date = DateTime.Now, UserName = us.UserName });
                 db.SaveChanges();
-                return true;                
-            }
-            catch {
+
+                return true;              
+            }catch {
                 return false;
             }
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool UpdateUser(string user)
         {
             try
@@ -50,13 +44,12 @@ namespace testApp.Controllers
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception e)
-            {
+            catch{
                 return false;
             }
         }
 
-        [HttpGet("[action]")]
+        [HttpGet]
         public string Login(string  name, string password)
         {
 
@@ -75,7 +68,7 @@ namespace testApp.Controllers
             }
         }
 
-        [HttpGet("[action]")]
+        [HttpGet]
         public string GetJournal()
         {
             try
@@ -88,7 +81,7 @@ namespace testApp.Controllers
             }
         }
  
-        [HttpGet("[action]")]
+        [HttpGet]
         public string GetAllUsers()
         {
 

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace testApp
-{
-    public class User: ICloneable
+namespace testApp {
+	public class User: ICloneable
     {     
 
         public int Id { get; set; }
