@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "9ade42627e960a707ffb2aeb622dca713f6870d2"
+    "signature": "610ba69778f2c1d10ac775c5589d339e8c67b512"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
           "System.Data.SQLite": "1.0.111",
-          "System.Data.SQLite.Core": "1.0.111"
+          "System.Data.SQLite.Core": "1.0.111",
+          "System.Data.SQLite.Linq": "1.0.111"
         },
         "runtime": {
           "Rest.dll": {}
@@ -245,6 +246,17 @@
         },
         "compile": {
           "lib/netstandard2.0/System.Data.SQLite.dll": {}
+        }
+      },
+      "System.Data.SQLite.Linq/1.0.111": {
+        "runtime": {
+          "lib/net46/System.Data.SQLite.Linq.dll": {
+            "assemblyVersion": "1.0.111.0",
+            "fileVersion": "1.0.111.0"
+          }
+        },
+        "compile": {
+          "lib/net46/System.Data.SQLite.Linq.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3264,6 +3276,13 @@
       "sha512": "sha512-D7Qo3JWUB6epymTVRNaAXt+Y+eh0juGjXb5q8SEp/LBdKJr6a224Mk0HCOemRsXfPIF8ULblPyCbVixUvfbpiw==",
       "path": "system.data.sqlite.core/1.0.111",
       "hashPath": "system.data.sqlite.core.1.0.111.nupkg.sha512"
+    },
+    "System.Data.SQLite.Linq/1.0.111": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6UJPe8nqCmMXvkZM9ohy9zAjF2LXJv+oBjZ2Cgl8CGVjvtLT3zFQpkXRSum0YIND5WLjKx8nrConEbK1O2+msg==",
+      "path": "system.data.sqlite.linq/1.0.111",
+      "hashPath": "system.data.sqlite.linq.1.0.111.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
