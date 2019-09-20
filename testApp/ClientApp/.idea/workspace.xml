@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Model/Journal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/Journal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Rest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Rest.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +82,7 @@
       <workItem from="1568744278399" duration="24566000" />
       <workItem from="1568808090717" duration="6560000" />
       <workItem from="1568896586728" duration="10353000" />
-      <workItem from="1568981175844" duration="3096000" />
+      <workItem from="1568981175844" duration="3112000" />
     </task>
     <servers />
   </component>

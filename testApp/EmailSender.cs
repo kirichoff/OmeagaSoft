@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.Extensions.DependencyInjection;
 using System.IO;
-
+using Microsoft.Extensions.Configuration;
 using System.Text;
 
 namespace testApp
@@ -36,8 +37,8 @@ namespace testApp
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
 
-
-
+           
+            
             MailAddress from = new MailAddress("kirichoff@gmail.com", "Tom");
             MailAddress to = new MailAddress("waja@temp-link.net");
             MailMessage m = new MailMessage(from, to);

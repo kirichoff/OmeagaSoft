@@ -22,6 +22,8 @@ namespace testApp
 
             AppContext app = new AppContext();
 
+            
+
             EmailSender sender = new EmailSender(app);
 
             services.AddSingleton<EmailSender>(sender);
