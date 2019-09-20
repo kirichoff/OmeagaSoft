@@ -1,0 +1,11 @@
+C:\Users\AAK\source\repos\testApp\Rest\bin\Debug\netcoreapp2.1\Rest.deps.json
+C:\Users\AAK\source\repos\testApp\Rest\bin\Debug\netcoreapp2.1\Rest.runtimeconfig.json
+C:\Users\AAK\source\repos\testApp\Rest\bin\Debug\netcoreapp2.1\Rest.runtimeconfig.dev.json
+C:\Users\AAK\source\repos\testApp\Rest\bin\Debug\netcoreapp2.1\Rest.dll
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.csprojAssemblyReference.cache
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.csproj.CoreCompileInputs.cache
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.RazorAssemblyInfo.cache
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.RazorAssemblyInfo.cs
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfoInputs.cache
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfo.cs
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.RazorTargetAssemblyInfo.cache

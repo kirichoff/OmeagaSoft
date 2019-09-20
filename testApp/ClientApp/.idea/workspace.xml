@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hashing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App.db" beforeDir="false" afterPath="$PROJECT_DIR$/../App.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AdministrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdministrationPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +72,7 @@
       <workItem from="1568744278399" duration="24566000" />
       <workItem from="1568808090717" duration="6560000" />
       <workItem from="1568896586728" duration="10353000" />
-      <workItem from="1568981175844" duration="2400000" />
+      <workItem from="1568981175844" duration="3096000" />
     </task>
     <servers />
   </component>
