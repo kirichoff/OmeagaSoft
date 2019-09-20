@@ -10,11 +10,9 @@ namespace testApp.Controllers
     public class SampleDataController : Controller
     {
         AppContext db;
-        EmailSender sender;
-        public SampleDataController(AppContext context,EmailSender send)
+        public SampleDataController(AppContext context)
         {
-            db = context;
-            sender = send;
+            db = context;        
         }
 
         [HttpPost("[action]")]

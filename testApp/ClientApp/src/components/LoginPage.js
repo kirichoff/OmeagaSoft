@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../store/UsersReducer";
-import {StoreHistory} from '../storeHistory'
+import Hashing from "../Hashing";
 
 
 class LoginPage extends Component {
@@ -31,8 +31,6 @@ class LoginPage extends Component {
 
     render() {
         console.log(this.props);
-
-
         return (
             <div className={'login-container'}>
             <FormGroup label='User Name'>

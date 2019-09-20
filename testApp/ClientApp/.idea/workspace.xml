@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hashing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../App.db" beforeDir="false" afterPath="$PROJECT_DIR$/../App.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmailMatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/regexFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AdministrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdministrationPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegistrationPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserEditorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserEditorPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Editor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Controllers/SampleDataController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailSender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
@@ -34,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -47,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
     <property name="last_opened_file_path" value="C:/Program Files/nodejs/node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -91,7 +83,8 @@
       <workItem from="1568639241763" duration="11035000" />
       <workItem from="1568744278399" duration="24566000" />
       <workItem from="1568808090717" duration="6560000" />
-      <workItem from="1568896586728" duration="9935000" />
+      <workItem from="1568896586728" duration="10353000" />
+      <workItem from="1568981175844" duration="2400000" />
     </task>
     <servers />
   </component>

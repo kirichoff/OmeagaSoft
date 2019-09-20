@@ -36,6 +36,8 @@ class AdministrationPage extends Component {
 
         let journal = this.props.User.Journal !== 'false' && this.props.User.Journal?  this.props.User.Journal: []
 
+        console.log(journal)
+
         let sorted = journal;
 
         if (   this.state.value !== '' && this.state.selector === ''){
@@ -114,7 +116,7 @@ class AdministrationPage extends Component {
                         k=>
                             <tr key={k.Id}>
                                 <th>{k.UserName || ''}</th>
-                                <th>{ new Date(k.Date).toDateString()}</th>
+                                <th>{ new Date(k.Date).toDateString()} | {new Date(k.Date).getHours()}:{new Date(k.Date).getMinutes()}</th>
                                 <th>{k.Action}</th>
                             </tr>
                     )

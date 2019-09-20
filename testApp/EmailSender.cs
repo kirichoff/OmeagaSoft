@@ -6,6 +6,7 @@ using System.Timers;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
+
 using System.Text;
 
 namespace testApp
@@ -23,7 +24,7 @@ namespace testApp
 
             aTimer = new Timer();
 
-            aTimer.Interval = 10000; //24* 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000 + 30000);
+            aTimer.Interval = 24* 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000 + 30000);
 
 
             aTimer.AutoReset = false;
@@ -47,10 +48,6 @@ namespace testApp
 
             var test = new StringBuilder();
 
-
-
-
-
             var u = from t in db.journal where t.Date.Day == DateTime.Now.Day - 1 select t;
 
             var SendList = new List<User>();
@@ -59,7 +56,7 @@ namespace testApp
 
             SendList = admins.ToList();
             
-            var array = db.journal.ToList();
+            var array = u.ToList();
 
             foreach (var ptr in  array)
             {                               
@@ -74,7 +71,6 @@ namespace testApp
 
             foreach (var ptr in SendList)
             {
-
             
                 to = new MailAddress(ptr.Email);
 
@@ -87,10 +83,7 @@ namespace testApp
 
                 smtp.Send(m);            
             }
-      
-   
-            
-
+                    
 
             aTimer.Interval = 24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);
 

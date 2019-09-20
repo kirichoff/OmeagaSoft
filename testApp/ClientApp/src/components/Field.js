@@ -25,8 +25,10 @@ class Field extends Component {
         switch (this.props.type){
             case 'email':
                 if (EmailMatch( this.state.value))
-                    {this.setState({edit: false ,});
-                this.props.onConfirm({[`${this.props.label}`] : this.state.value})}
+                    {
+                        this.setState({edit: false ,});
+                this.props.onConfirm({[`${this.props.label}`] : this.state.value})
+                    }
             else
                 this.setState({error: true});
             break;
@@ -36,17 +38,14 @@ class Field extends Component {
             else
                 this.setState({error: true});
             break;
-            default:  this.props.onConfirm({[`${this.props.label}`] : this.state.value})
+            default:  this.setState({edit: false ,});  this.props.onConfirm({[`${this.props.label}`] : this.state.value})
         }
 
     }
 
 
     render() {
-
         let type = this.props.type || 'text'
-        console.log(this.props.type)
-        console.log(type)
         return (
             <div>
                 <FormGroup label={this.props.label}>
