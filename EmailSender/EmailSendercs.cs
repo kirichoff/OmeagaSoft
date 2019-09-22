@@ -93,7 +93,7 @@ namespace EmailSender
 
             MemoryStream stream = new MemoryStream(byte_array);
 
-
+ 
 
             foreach (var ptr in admins)
             {

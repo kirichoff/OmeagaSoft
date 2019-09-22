@@ -1,6 +1,6 @@
 const rest ={}
 
-const url = 'https://localhost:44336/'
+const url = process.env.URL || 'https://localhost:44336/';
 
 rest.Modify = function (user,type='update') {
     let typeStr;
