@@ -3,7 +3,7 @@ import {Table} from "react-bootstrap";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../store/UsersReducer";
-import {sort} from '../sort'
+import {sort} from '../utils/sort'
 import Input from "rambler-ui/Input";
 import Select from 'rambler-ui/Select'
 import {MenuItem} from 'rambler-ui/Menu'

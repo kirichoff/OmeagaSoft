@@ -4,7 +4,7 @@ import Input from "rambler-ui/Input";
 import * as icons from "rambler-ui/icons/forms";
 import Button from "rambler-ui/Button";
 import InputStatus from 'rambler-ui/InputStatus'
-import {EmailMatch, PasswordMatch} from "../regexFunctions";
+import {EmailMatch, PasswordMatch} from "../utils/regexFunctions";
 const Edit = icons['EditIcon'];
 const Clear = icons['ClearIcon'];
 const Check = icons['TickIcon']

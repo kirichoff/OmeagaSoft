@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 
-namespace Rest.Model
+namespace Rest
 {
     public class SqlLiteController
     {
@@ -35,6 +35,46 @@ namespace Rest.Model
                 StartDate = readader.GetDateTime(7),
             };
         }
+
+        public List<string> Admins()
+        {
+            SQLiteCommand command = new SQLiteCommand($"SELECT Email From Users where Type=1", connection);
+
+            var readader = command.ExecuteReader();
+
+            List<string> val = new List<string>();
+
+            while (readader.Read())
+            {
+                val.Add(readader.GetString(0));
+            }
+
+
+            return val;
+        }
+
+
+        public List<ResponseJournal> JournalUsers()
+        {
+            SQLiteCommand command = new SQLiteCommand($"SELECT Action,Date,UserName From Journal inner join Users on Users.Id=Journal.UserId where Users.Type > 0", connection);
+
+            var readader = command.ExecuteReader();
+
+            List<ResponseJournal> val = new List<ResponseJournal>();
+
+            while (readader.Read())
+            {
+                val.Add( new ResponseJournal{                        
+                       Action= readader.GetString(0),
+                       Date = readader.GetDateTime(1),
+                       UserName = readader.GetString(2)                       
+                    });
+            }
+            return val;
+        }
+
+        
+
         public bool UpdateUser(User user)
         {
             SQLiteCommand command =
@@ -44,7 +84,7 @@ namespace Rest.Model
                $"Password='{user.Password}'," +
                $"Email='{user.Email}'" +
                $",Type={user.Type}" +
-               $",StartDate = '{user.StartDate.ToString()}' where Id={user.Id}"
+               $",StartDate = '{user.StartDate.ToString("o")}"
                , connection);
 
             int res = command.ExecuteNonQuery();
@@ -79,7 +119,7 @@ namespace Rest.Model
                 $"'{user.Password}'," +
                 $"'{user.Email}'," +
                 $"{user.Type}," +
-                $"'{user.StartDate.ToString()}' )"
+                $"'{user.StartDate.ToString("o")}' )"
                 , connection);
 
             int res = command.ExecuteNonQuery();
@@ -98,7 +138,7 @@ namespace Rest.Model
         }
         public List<User> GetUsers()
         {
-            SQLiteCommand command = new SQLiteCommand($"SELECT * From Users'", connection);
+            SQLiteCommand command = new SQLiteCommand($"SELECT * From Users", connection);
 
             var readader = command.ExecuteReader();
            
@@ -106,17 +146,18 @@ namespace Rest.Model
 
             while (readader.Read())
             {
-                list.Add(new User()
-                {
-                    Id = readader.GetInt32(0),
-                    UserName = readader.GetString(1),
-                    FirstName = readader.GetString(2),
-                    LastName = readader.GetString(3),
-                    Password = readader.GetString(4),
-                    Email = readader.GetString(5),
-                    Type = readader.GetBoolean(6),
-                    StartDate = readader.GetDateTime(7),
-                }
+                list.Add(
+             new User()
+             {
+                 Id = readader.GetInt32(0),
+                 UserName = readader.GetString(1),
+                 FirstName = readader.GetString(2),
+                 LastName = readader.GetString(3),
+                 Password = readader.GetString(4),
+                 Email = readader.GetString(5),
+                 Type = readader.GetBoolean(6),
+                 StartDate = readader.GetDateTime(7),
+             }
                 );
             }
 

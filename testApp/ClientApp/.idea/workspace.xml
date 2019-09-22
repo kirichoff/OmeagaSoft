@@ -2,17 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/authHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/App.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/App.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Model/Journal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/Journal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Rest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Rest.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../testApp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../testApp.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hashing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Hashing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdministrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdministrationPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegistrationPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestCompponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestCompponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/regexFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/regexFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sort.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UsersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storeHistory.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../testApp.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +62,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response21.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="1Qv1kNTVz1zl37TOJgmnVZNAdbP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="C:/Program Files/nodejs/node.exe" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -47,13 +81,208 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kirill\Desktop\OmeagaSoft\testApp\ClientApp\src\utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kirill\Desktop\OmeagaSoft\testApp\ClientApp\src\utils" />
       <recent name="C:\Users\AAK\source\repos\testApp\testApp\ClientApp\src\components" />
       <recent name="C:\Users\kirill\Desktop\OmeagaSoft\testApp\ClientApp\src" />
     </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/Login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="qwe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="qwe" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/Login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="&quot;qwe&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="&quot;qwe&quot;" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/GetAllUsers" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/ValuesController/GetAllUsers" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/Get" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/values/Get/5" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://localhost:44336" />
+          <option name="urlPath" value="/api/ValuesController/Get" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -83,6 +312,10 @@
       <workItem from="1568808090717" duration="6560000" />
       <workItem from="1568896586728" duration="10353000" />
       <workItem from="1568981175844" duration="3112000" />
+      <workItem from="1569024857883" duration="97000" />
+      <workItem from="1569024970666" duration="1723000" />
+      <workItem from="1569102894760" duration="7573000" />
+      <workItem from="1569147741900" duration="10039000" />
     </task>
     <servers />
   </component>

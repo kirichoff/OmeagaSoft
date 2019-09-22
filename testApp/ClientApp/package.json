@@ -1,9 +1,11 @@
 {
   "name": "testApp",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "bootstrap": "^3.4.1",
+    "dotenv": "^8.1.0",
+    "history": "latest",
     "rambler-ui": "^3.47.0",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
@@ -15,8 +17,10 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "rimraf": "^2.6.2",
-    "history": "latest"
+    "rimraf": "^2.6.2"
+  },
+  "env": {
+    "PORT": 44336
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",

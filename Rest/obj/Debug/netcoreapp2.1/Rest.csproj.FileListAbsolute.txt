@@ -9,3 +9,17 @@ C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.RazorAssembl
 C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfoInputs.cache
 C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfo.cs
 C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.RazorTargetAssemblyInfo.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\bin\Debug\netcoreapp2.1\Rest.deps.json
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\bin\Debug\netcoreapp2.1\Rest.runtimeconfig.json
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\bin\Debug\netcoreapp2.1\Rest.runtimeconfig.dev.json
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\bin\Debug\netcoreapp2.1\Rest.dll
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\bin\Debug\netcoreapp2.1\Rest.pdb
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.csprojAssemblyReference.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.csproj.CoreCompileInputs.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.RazorAssemblyInfo.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.RazorAssemblyInfo.cs
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfoInputs.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInfo.cs
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.RazorTargetAssemblyInfo.cache
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.dll
+C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.pdb

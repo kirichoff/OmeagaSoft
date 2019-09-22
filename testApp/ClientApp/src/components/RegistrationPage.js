@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../store/UsersReducer";
 import {Link} from "react-router-dom";
-import {EmailMatch, PasswordMatch} from "../regexFunctions";
+import {EmailMatch, PasswordMatch} from "../utils/regexFunctions";
 import InputStatus from "rambler-ui/InputStatus";
 
 
@@ -30,36 +30,41 @@ class RegistrationPage extends Component {
     }
 
     onChange = (tag)=> (e)=>this.setState({[`${tag}`]: e.target.value});
+
     click = ()=> {
+        let password = false;
+        let email = false;
+        let field = false
+
         if (EmailMatch(this.state.Email)) {
-            this.props.Register({...this.state})
+            email= true
             this.setState({status: ''})
         }
         else {this.setState({status: 'error'})}
         if (PasswordMatch(this.state.Password)){
-            this.props.Register({...this.state})
+            password = true
             this.setState({statusPassword: ''})
         }
         else {this.setState({statusPassword: 'error'})}
-        if (this.state.UserName&&this.state.FirstName&&this.state.LastName   ){
-            this.props.Register({...this.state})
+        if (this.state.UserName&&this.state.FirstName&&this.state.LastName){
+            field= true
             this.setState({FieldError: ''})
         }
         else {this.setState({FieldError: 'error'})}
+        if (field&&email&&password){
+            this.props.Register({...this.state}).then(k=>{
+                if (this.props.User.isRegister === true){
+                    this.props.history.push('/')
+                }
+            })
+        }
 
 
 
     }
 
     onObjectsChange = (e)=> this.setState({objectValue:e.target.value})
-
-
     render() {
-        console.log(this.props)
-        console.log(this.state)
-        if (this.props.User.isRegister === true){
-            this.props.history.push('/')
-        }
         return (
                 <div className={'registration-container'}>
                     <FormGroup label='User Name'>
@@ -75,7 +80,7 @@ class RegistrationPage extends Component {
                         </InputStatus>
                     </FormGroup>
                     <FormGroup label='Firs Name'>
-                        <InputStatus type={this.state.FieldError||null} message={this.state.FieldError==="error"?'fields must be filled':''}  >
+                        <InputStatus type={this.state.FieldError||null} message={this.state.FieldError==="error"?'field must be filled':''}  >
                         <Input
                             status={this.state.FieldError||null}
                             type="text"

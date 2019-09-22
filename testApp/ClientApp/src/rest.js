@@ -1,5 +1,7 @@
 const rest ={}
 
+const url = 'https://localhost:44336/'
+
 rest.Modify = function (user,type='update') {
     let typeStr;
 
@@ -15,24 +17,24 @@ rest.Modify = function (user,type='update') {
     let form = new FormData()
 
     form.append('user',  JSON.stringify(user))
-    return  fetch(`api/SampleData/${typeStr}/`,{
+    return  fetch(url+`api/values/${typeStr}`,{
         method: 'POST',
-        body: form
-    })
-        .then(data => data.json().then(d=>d))
-        .catch(ex=> ex)
-        ;
-}
-rest.getUsers = function(){
-    return  fetch(`api/SampleData/GetAllUsers/`,{
-        method: 'GET',
+        body: form,
     })
         .then(data => data.json())
         .catch(ex=> ex)
         ;
 }
+rest.getUsers = function(){
+    return  fetch(url+`api/values/GetAllUsers/`,{
+        method: 'GET',
+    })
+        .then(data =>{console.log(data); return data.json()})
+        .catch(ex=> ex)
+        ;
+}
 rest.getJournal = function(){
-    return  fetch(`api/SampleData/GetJournal/`,{
+    return  fetch(url+`api/values/GetJournal/`,{
         method: 'GET',
     })
         .then(data => data.json())
@@ -42,7 +44,7 @@ rest.getJournal = function(){
 
 
 rest.find = function (username,password) {
-    return  fetch(`api/SampleData/Login/?name=${username}&password=${password}`,{
+    return  fetch(url+`api/values/Login/?name=${username}&password=${password}`,{
         method: 'GET',
     })
         .then(data => data.json())

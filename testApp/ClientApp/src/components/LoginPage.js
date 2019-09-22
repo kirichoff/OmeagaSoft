@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../store/UsersReducer";
-import Hashing from "../Hashing";
+import Hashing from "../utils/Hashing";
 
 
 class LoginPage extends Component {

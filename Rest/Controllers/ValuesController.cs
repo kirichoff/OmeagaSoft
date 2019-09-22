@@ -3,44 +3,96 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Rest.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        SqlLiteController db;
+      public  ValuesController(SqlLiteController context)
         {
-            return new string[] { "value1", "value2" };
+            db = context;
+        }
+        [HttpPost("[action]")]
+        public bool AddUser(string user)
+        {
+            try
+            {
+                var us = JsonConvert.DeserializeObject<User>(user);               
+                return db.AddUser(us);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        [HttpPost("[action]")]
+        public bool UpdateUser(string user)
+        {
+            try
+            {
+                var us = JsonConvert.DeserializeObject<User>(user);              
+                return db.UpdateUser(us);
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+        [HttpGet("[action]")]
+        public string Login(string name, string password)
+        {
+
+         
+                return JsonConvert.SerializeObject(
+                       db.SignIn(name, password)
+                    );
+          
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("[action]")]
+        public string GetAllUsers()
         {
-            return "value";
+
+            try
+            {              
+                return JsonConvert.SerializeObject(
+                        db.GetUsers()
+                    );         
+            }
+            catch
+            {
+                return "false";
+            }
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+
+        [HttpGet("[action]")]
+        public string admins()
         {
+            return JsonConvert.SerializeObject(db.Admins());
+        }
+        [HttpGet("[action]")]
+        public string JournalEmail()
+        {
+            return JsonConvert.SerializeObject(db.JournalUsers());
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
 
-        }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet("[action]")]
+        public string GetJournal()
         {
+            try
+            {
+                return JsonConvert.SerializeObject(db.GetJournal());
+            }
+            catch
+            {
+                return "false";
+            }
         }
     }
 }

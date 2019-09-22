@@ -15,7 +15,6 @@ export const actionCreators = {
                LastName,
                Email}
                ) => async (dispatch, getState) =>{
-
       const user = {
         UserName: UserName,
         Password: Password,
@@ -23,7 +22,7 @@ export const actionCreators = {
         FirstName: FirstName,
         LastName: LastName,
         Email: Email,
-        StartDate: new Date()
+        StartDate: `${new Date().toISOString()}`
         }
 
        let res = await rest.Modify(user,'add')
@@ -36,9 +35,7 @@ export const actionCreators = {
              LastName,
              Email}
     ) => async (dispatch, getState) =>{
-    console.log('Edit',getState())
     let user = getState().User.User
-
       user.FirstName = FirstName? FirstName : user.FirstName
       user.Password = Password? Password : user.Password
       user.LastName = LastName? LastName : user.LastName

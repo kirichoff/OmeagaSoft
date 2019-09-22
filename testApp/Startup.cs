@@ -19,19 +19,7 @@ namespace testApp
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-
-            AppContext app = new AppContext();
-
-            
-
-            EmailSender sender = new EmailSender(app);
-
-            services.AddSingleton<EmailSender>(sender);
-
-            services.AddSingleton<AppContext>(app);
-
-            
-
+                               
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSpaStaticFiles(configuration =>
@@ -59,12 +47,11 @@ namespace testApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    name: "default"
             });
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                 spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
                 {

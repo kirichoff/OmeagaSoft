@@ -1,0 +1,14 @@
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.csprojAssemblyReference.cache
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.csproj.CoreCompileInputs.cache
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.RazorAssemblyInfo.cache
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.RazorAssemblyInfo.cs
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.AssemblyInfoInputs.cache
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.AssemblyInfo.cs
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\bin\Debug\netcoreapp2.1\EmailSender.deps.json
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\bin\Debug\netcoreapp2.1\EmailSender.runtimeconfig.json
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\bin\Debug\netcoreapp2.1\EmailSender.runtimeconfig.dev.json
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\bin\Debug\netcoreapp2.1\EmailSender.dll
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\bin\Debug\netcoreapp2.1\EmailSender.pdb
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.RazorTargetAssemblyInfo.cache
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.dll
+C:\Users\kirill\Desktop\OmeagaSoft\EmailSender\obj\Debug\netcoreapp2.1\EmailSender.pdb
