@@ -23,20 +23,34 @@ namespace EmailSender
         {
             timer = new Timer();
 
-            timer.Interval = 24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);
+            timer.Interval = 1000;//24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);
 
             timer.AutoReset = false;
 
             timer.Elapsed += OnTimedEvent;
 
             timer.Enabled = true;
-
-           
+            
             options = _options;
         }
 
 
+        public string Request(string action)
+        {
+            string res;
+            HttpWebRequest getAdmins = (HttpWebRequest)WebRequest.Create(options.Resource + action);
+            HttpWebResponse response = (HttpWebResponse)getAdmins.GetResponse();
+            using (Stream stre = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stre))
+                {
+                    res = reader.ReadToEnd();
+                }
+            }
+            response.Close();
 
+            return res;
+        }
         
 
 
@@ -48,39 +62,16 @@ namespace EmailSender
             MailAddress from = new MailAddress(options.Mail, "name");
             MailMessage m;
             MailAddress to;
-            SmtpClient smtp = new SmtpClient(options.SmptClient, 587);
+            SmtpClient smtp = new SmtpClient(options.SmptClient, options.Port);
             smtp.Credentials = new NetworkCredential(options.Mail, options.Password);
             smtp.EnableSsl = true;
 
 
-            string res ;
+     
 
-            HttpWebRequest getAdmins = (HttpWebRequest)WebRequest.Create(options.Resource+"admins");
-            HttpWebResponse response = (HttpWebResponse)getAdmins.GetResponse();
-            using (Stream stre = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stre))
-                {
-                    res = reader.ReadToEnd();
-                }
-            }
-            response.Close();
+            var admins = JsonConvert.DeserializeObject<string[]>(Request("admins"));  
 
-            var admins = JsonConvert.DeserializeObject<string[]>(res);
-
-
-            getAdmins = (HttpWebRequest)WebRequest.Create(options.Resource + "JournalEmail");
-           response = (HttpWebResponse)getAdmins.GetResponse();
-            using (Stream stre = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stre))
-                {
-                    res = reader.ReadToEnd();
-                }
-            }
-            response.Close();
-
-            var array = JsonConvert.DeserializeObject<List<ResponseUser>>(res);
+            var array = JsonConvert.DeserializeObject<List<ResponseUser>>(Request("GetJournal"));
 
             var test = new StringBuilder();
 
@@ -93,18 +84,24 @@ namespace EmailSender
 
             MemoryStream stream = new MemoryStream(byte_array);
 
- 
 
-            foreach (var ptr in admins)
+            try
+            {
+                foreach (var ptr in admins)
+                {
+
+                    to = new MailAddress(ptr);
+                    m = new MailMessage(from, to);
+                    m.Subject = options.Subject;
+                    m.Body = options.SmptClient;
+                    m.Attachments.Add(new Attachment(stream, $"report_{DateTime.Now.ToString("yyyyMMdd")}.csv"));
+
+                    smtp.Send(m);
+                }
+            }
+            catch
             {
 
-                to = new MailAddress(ptr);
-                m = new MailMessage(from, to);
-                m.Subject = options.Subject;
-                m.Body = options.SmptClient;
-                m.Attachments.Add(new Attachment(stream, $"report_{DateTime.Now.ToString("yyyyMMdd")}.csv"));
-
-                smtp.Send(m);
             }
 
             timer.Interval = 24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);

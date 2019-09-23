@@ -2,20 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/EmailSendercs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/EmailSendercs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/bin/Debug/netcoreapp2.1/EmailSender.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/Debug/netcoreapp2.1/EmailSender.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/EmailSender.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/EmailSender.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/EmailSender.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/EmailSender.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EmailSender/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../EmailSender/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/App.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/App.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Controllers/ValuesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Model/SqlLiteController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/bin/Debug/netcoreapp2.1/Rest.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Debug/netcoreapp2.1/Rest.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailSender.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/Rest.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rest/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdministrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdministrationPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserEditorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserEditorPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/UsersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sort.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

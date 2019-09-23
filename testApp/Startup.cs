@@ -44,7 +44,9 @@ namespace testApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-         
+            app.UseMvc(routes =>
+            {               
+            });
             app.UseSpa(spa =>
             {
                  spa.Options.SourcePath = "ClientApp";

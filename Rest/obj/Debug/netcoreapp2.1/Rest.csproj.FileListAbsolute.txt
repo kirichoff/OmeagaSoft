@@ -23,3 +23,6 @@ C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.AssemblyInf
 C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.RazorTargetAssemblyInfo.cache
 C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.dll
 C:\Users\kirill\Desktop\OmeagaSoft\Rest\obj\Debug\netcoreapp2.1\Rest.pdb
+C:\Users\AAK\source\repos\testApp\Rest\bin\Debug\netcoreapp2.1\Rest.pdb
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.dll
+C:\Users\AAK\source\repos\testApp\Rest\obj\Debug\netcoreapp2.1\Rest.pdb

@@ -1,10 +1,11 @@
 ﻿import rest from '../rest'
+import Hashing from "../utils/Hashing";
 
 const initialState = {}
 
 export const actionCreators = {
   Login: (userName,password) => async (dispatch, getState) => {
-    const user = await rest.find(userName,password);
+    const user = await rest.find(userName,Hashing(password));
     dispatch({ type: "LOGIN",User: user });
   },
   Register: ({
@@ -17,7 +18,7 @@ export const actionCreators = {
                ) => async (dispatch, getState) =>{
       const user = {
         UserName: UserName,
-        Password: Password,
+        Password: Hashing(Password),
         Type: objectValue === 'Admin',
         FirstName: FirstName,
         LastName: LastName,
@@ -37,7 +38,7 @@ export const actionCreators = {
     ) => async (dispatch, getState) =>{
     let user = getState().User.User
       user.FirstName = FirstName? FirstName : user.FirstName
-      user.Password = Password? Password : user.Password
+      user.Password = Password? Password : Hashing(user.Password)
       user.LastName = LastName? LastName : user.LastName
       user.Email = Email? Email : user.Email
       user.Type = objectValue? objectValue ==='Admin' : user.Type

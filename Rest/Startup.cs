@@ -29,7 +29,7 @@ namespace Rest
             string dbString = Configuration.GetConnectionString("App");
 
 
-            services.AddTransient(option=> new SqlLiteController(dbString) );
+            services.AddScoped(option=> new SqlLiteController(dbString) );
 
                       
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -46,7 +46,7 @@ namespace Rest
             {
                 app.UseHsts();
             }
-
+            app.UseCors(cors => cors.AllowAnyOrigin());
             app.UseHttpsRedirection();
         
             app.UseMvc(routes =>

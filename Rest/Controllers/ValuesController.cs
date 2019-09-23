@@ -16,39 +16,52 @@ namespace Rest.Controllers
             db = context;
         }
         [HttpPost("[action]")]
-        public bool AddUser(string user)
+        public async Task<bool> AddUser(string user)
         {
-            try
-            {
-                var us = JsonConvert.DeserializeObject<User>(user);               
-                return db.AddUser(us);
-            }
-            catch
-            {
+          
+                var us = JsonConvert.DeserializeObject<User>(user);
+                if (user != null)
+                {
+                    if (await db.AddUser(us)) {
+                        var on_reg =  db.SignIn(us.UserName, us.Password);
+
+                    return db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
+                    }
+                }
                 return false;
-            }
+            
+          
         }
         [HttpPost("[action]")]
-        public bool UpdateUser(string user)
+        public async Task<bool> UpdateUser(string user)
         {
-            try
-            {
-                var us = JsonConvert.DeserializeObject<User>(user);              
-                return db.UpdateUser(us);
-            }
-            catch 
-            {
+           
+
+               var us = JsonConvert.DeserializeObject<User>(user);
+                if (us != null)
+                {
+                bool b = db.AddJournal(new Journal { Action = "Update", Date = DateTime.Now, UserId = us.Id });
+                    return await db.UpdateUser(us);
+                }
                 return false;
-            }
+            
+           
         }
         [HttpGet("[action]")]
         public string Login(string name, string password)
         {
 
-         
-                return JsonConvert.SerializeObject(
-                       db.SignIn(name, password)
-                    );
+            
+                User user = db.SignIn(name, password);
+                if (user != null)
+                {
+                   bool b= db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
+                    return JsonConvert.SerializeObject(
+                            user
+                        );
+                }
+                return "false";
+           
           
         }
 
@@ -68,31 +81,24 @@ namespace Rest.Controllers
             }
         }
 
-
         [HttpGet("[action]")]
-        public string admins()
+        public async Task<string> admins()
         {
-            return JsonConvert.SerializeObject(db.Admins());
+            return JsonConvert.SerializeObject(await db.Admins());
         }
         [HttpGet("[action]")]
-        public string JournalEmail()
+        public async Task<string> GetJournal()
         {
-            return JsonConvert.SerializeObject(db.JournalUsers());
-        }
 
-
-
-        [HttpGet("[action]")]
-        public string GetJournal()
-        {
             try
             {
-                return JsonConvert.SerializeObject(db.GetJournal());
+                var ls = await db.JournalUsers();
+                return JsonConvert.SerializeObject(ls);
             }
-            catch
-            {
+            catch{
                 return "false";
             }
+          
         }
     }
 }

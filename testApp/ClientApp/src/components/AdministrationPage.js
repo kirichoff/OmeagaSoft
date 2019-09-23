@@ -53,7 +53,7 @@ class AdministrationPage extends Component {
             sorted = sort.byAction(sorted,this.state.selector)
             if (this.state.ByDate) sorted = sort.ByDate(sorted)
         }
-        if (this.state.ByDate) sorted = sort.ByDate(sorted)
+         sorted = sort.ByDate(sorted,this.state.ByDate)
 
         console.log(User)
 

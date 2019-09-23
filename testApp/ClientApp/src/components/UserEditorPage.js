@@ -15,8 +15,6 @@ class UserEditorPage extends Component {
             error: false
         }
     }
-
-
     onChange = (e)=> {
         console.log('E',e.target.value)
         this.props.Edit({objectValue: e.target.value})
@@ -37,10 +35,10 @@ class UserEditorPage extends Component {
             {
                 User.UserName?
                     <div style={{width: '100%'}}>
-                        <Field isError={this.state.error} onConfirm={this.confirm} value={User.FirstName} type={'text'} label={'FirstName'}/>
-            <Field isError={this.state.error} onConfirm={this.confirm} value={User.LastName} type={'text'} label={'LastName'}/>
-            <Field isError={this.state.error} onConfirm={this.confirm} value={User.Password} type={'password'} label={'Password'}/>
-            <Field isError={this.state.error}  onConfirm={this.confirm} value={User.Email} type={'email'} label={'Email'}/>
+                        <Field isError={this.state.error}  onConfirm={this.confirm}  placeholder={User.FirstName}  value={User.FirstName} type={'text'} label={'FirstName'}/>
+            <Field isError={this.state.error} onConfirm={this.confirm} placeholder={User.LastName} value={User.LastName} type={'text'} label={'LastName'}/>
+            <Field isError={this.state.error} onConfirm={this.confirm} placeholder={'Password'} value={'Password'} type={'password'} label={'Password'}/>
+            <Field isError={this.state.error}  onConfirm={this.confirm} placeholder={User.Email} value={User.Email} type={'email'} label={'Email'}/>
 
             <RadioButtonGroup
                 style={{marginBottom: 40, maxWidth: 300}}

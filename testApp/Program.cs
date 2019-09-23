@@ -19,10 +19,6 @@ namespace testApp
 
         {
 
-
-
-
-
             CreateWebHostBuilder(args).Build().Run();
         }
 

@@ -75,7 +75,7 @@ class Field extends Component {
                                 style={{width: '100%'}}
                                 value={this.state.value}
                                 onChange={this.onChange}
-                                placeholder="User Name"
+                                placeholder={this.props.placeholder}
                                 variation={"regular"}
                             />
                                 </InputStatus>

@@ -23,12 +23,21 @@ sort.byActionAndName = function (array,action,name) {
         }
     )
 }
-sort.ByDate = function (array) {
-    array.sort((a,b)=>{
-        if(a.Date>b.Date) return-1
-        if(a.Date<b.Date) return 1
-        if(a.Date===b.Date) return 0
-    })
+sort.ByDate = function (array,from=true) {
+    if (from) {
+        array.sort((a, b) => {
+            if (a.Date > b.Date) return -1
+            if (a.Date < b.Date) return 1
+            if (a.Date === b.Date) return 0
+        })
+    }
+    else {
+        array.sort((a, b) => {
+            if (a.Date < b.Date) return -1
+            if (a.Date > b.Date) return 1
+            if (a.Date === b.Date) return 0
+        })
+    }
 
     return array
 }
