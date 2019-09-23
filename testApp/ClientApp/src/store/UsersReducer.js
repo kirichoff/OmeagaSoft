@@ -38,7 +38,7 @@ export const actionCreators = {
     ) => async (dispatch, getState) =>{
     let user = getState().User.User
       user.FirstName = FirstName? FirstName : user.FirstName
-      user.Password = Password? Password : Hashing(user.Password)
+      user.Password = Password? Hashing(Password) : user.Password
       user.LastName = LastName? LastName : user.LastName
       user.Email = Email? Email : user.Email
       user.Type = objectValue? objectValue ==='Admin' : user.Type

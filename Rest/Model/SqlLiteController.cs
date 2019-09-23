@@ -8,171 +8,206 @@ namespace Rest
 {
     public class SqlLiteController
     {
-        SQLiteConnection connection;
+
+        string connection;
         public SqlLiteController(string connectionString)
         {
-            connection = new SQLiteConnection(connectionString);
+            connection = connectionString;
             
         }
 
         public User SignIn(string name, string password)
-        {
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand($"SELECT * From Users where UserName='{name}' and Password='{password}'", connection);
+        {           
+            User user;
 
-            var readader =  command.ExecuteReader();
-
-            readader.Read();
-
-             User user = new User()
-            {
-                Id = readader.GetInt32(0),
-                UserName = readader.GetString(1),
-                FirstName = readader.GetString(2),
-                LastName = readader.GetString(3),
-                Password = readader.GetString(4),
-                Email = readader.GetString(5),
-                Type = readader.GetBoolean(6),
-                StartDate = readader.GetDateTime(7),
-            };
-            connection.Close();
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {      
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT * From Users where UserName='{name}' and Password='{password}'", c))
+                {
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {
+                        readader.Read();
+                         user = new User()
+                        {
+                            Id = readader.GetInt32(0),
+                            UserName = readader.GetString(1),
+                            FirstName = readader.GetString(2),
+                            LastName = readader.GetString(3),
+                            Password = readader.GetString(4),
+                            Email = readader.GetString(5),
+                            Type = readader.GetBoolean(6),
+                            StartDate = readader.GetDateTime(7),
+                        };
+                    }
+                }
+            }
             return user;
         }
 
-        public async Task<List<string>> Admins()
-        {
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand($"SELECT Email From Users where Type=1", connection);
-
-            var readader = await command.ExecuteReaderAsync();
-   
+        public  List<string> Admins()
+        {      
             List<string> val = new List<string>();
-
-            while (readader.Read())
+            using (SQLiteConnection c = new SQLiteConnection(connection))
             {
-                val.Add(readader.GetString(0));
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT Action,Date,UserName From Journal inner join Users on Users.Id=Journal.UserId", c))
+                {
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {
+                        while (readader.Read())
+                        {
+                            val.Add(readader.GetString(0));
+                        }
+                    }
+                }
             }
-
-            connection.Close();
             return val;
         }
 
 
-        public async Task<List<ResponseJournal>> JournalUsers()
+        public  List<ResponseJournal> JournalUsers()
         {
-            connection.Open();            
-            SQLiteCommand command = new SQLiteCommand($"SELECT Action,Date,UserName From Journal inner join Users on Users.Id=Journal.UserId", connection);
-
-            var readader = await command.ExecuteReaderAsync();
-          
             List<ResponseJournal> val = new List<ResponseJournal>();
-
-            while (readader.Read())
+            using (SQLiteConnection c = new SQLiteConnection(connection))
             {
-                val.Add( new ResponseJournal{                        
-                       Action= readader.GetString(0),
-                       Date = readader.GetDateTime(1),
-                       UserName = readader.GetString(2)                       
-                    });
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT Action,Date,UserName From Journal inner join Users on Users.Id=Journal.UserId",c))
+                {
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {
+
+                        while (readader.Read())
+                        {
+                            val.Add(new ResponseJournal
+                            {
+                                Action = readader.GetString(0),
+                                Date = readader.GetDateTime(1),
+                                UserName = readader.GetString(2)
+                            });
+                        }                       
+                    }
+                }
             }
-            connection.Close();
             return val;
         }
 
         
 
-        public async Task<bool> UpdateUser(User user)
+        public  bool UpdateUser(User user)
         {
-            connection.Open();
-            SQLiteCommand command =
-               new SQLiteCommand($"Update Users set " +
+            int res = 0;          
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"Update Users set " +
                $"UserName='{user.UserName}', FirstName ='{user.FirstName}'," +
                $"LastName='{user.LastName}'," +
                $"Password='{user.Password}'," +
                $"Email='{user.Email}'" +
                $",Type={user.Type}" +
-               $",StartDate = '{user.StartDate.ToString("o")} where Id={user.Id}"
-               , connection);
-
-            int res = await command.ExecuteNonQueryAsync();
-            connection.Close();
+               $",StartDate = '{user.StartDate.ToString("o")}' where Id={user.Id}", c))
+                {
+                      res = cmd.ExecuteNonQuery();
+                 }
+                }           
             return (res > 0) ? true : false;
         }
-        public async Task<List<Journal>> GetJournal()
+        public  List<Journal> GetJournal()
         {
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand($"SELECT * From Journal", connection);
-
-            var readader = await command.ExecuteReaderAsync();
-            var list = new List<Journal>();
-            while (readader.Read())
+            var list = new List<Journal>();          
+            using (SQLiteConnection c = new SQLiteConnection(connection))
             {
-                list.Add(new Journal()
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT * From Journal", c))
                 {
-                    Id = readader.GetInt32(0),                   
-                    Action = readader.GetString(1),
-                    Date = readader.GetDateTime(2),
-                    UserId = readader.GetInt32(3)
-                });
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {                       
+                        
+                        while (readader.Read())
+                        {
+                            list.Add(new Journal()
+                            {
+                                Id = readader.GetInt32(0),
+                                Action = readader.GetString(1),
+                                Date = readader.GetDateTime(2),
+                                UserId = readader.GetInt32(3)
+                            });
+                        }
+                    }
+                }
             }
-            connection.Close();
             return list;
         }
-        public async Task<bool> AddUser(User user)
-        {
-            connection.Open();
-            SQLiteCommand command =
-                new SQLiteCommand($"Insert Into Users(UserName,FirstName,LastName,Password,Email,Type,StartDate)" +
+        public bool AddUser(User user)
+        {         
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"Insert Into Users(UserName,FirstName,LastName,Password,Email,Type,StartDate)" +
                 $" values('{user.UserName}'," +
                 $"'{user.FirstName}'," +
                 $"'{user.LastName}'," +
                 $"'{user.Password}'," +
                 $"'{user.Email}'," +
                 $"{user.Type}," +
-                $"'{user.StartDate.ToString("o")}' )"
-                , connection);
-
-            int res = await command.ExecuteNonQueryAsync();
-            connection.Close();
-            return (res > 0) ? true : false;
+                $"'{user.StartDate.ToString("o")}' )", c))
+                {
+                    int res = cmd.ExecuteNonQuery();      
+                    return (res > 0) ? true : false;
+                }
+            }
         }
+
+
+
         public bool AddJournal(Journal journal)
         {
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand($"Insert Into Journal(Action,Date,UserId) " +
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"Insert Into Journal(Action,Date,UserId) " +
                 $"values('{journal.Action}'," +
                 $"'{journal.Date.ToString("o")}'," +
-                $"'{journal.UserId}')", connection);
+                $"'{journal.UserId}')", c))
+                {
 
-            int res =  command.ExecuteNonQuery();
-            connection.Close();
-            return (res > 0) ? true : false;
-        }
-        public async Task<List<User>> GetUsers()
-        {
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand($"SELECT * From Users", connection);
-            var readader = await command.ExecuteReaderAsync();
-
-            var list = new List<User>();
-
-            while (readader.Read())
-            {
-                list.Add(
-             new User()
-             {
-                 Id = readader.GetInt32(0),
-                 UserName = readader.GetString(1),
-                 FirstName = readader.GetString(2),
-                 LastName = readader.GetString(3),
-                 Password = readader.GetString(4),
-                 Email = readader.GetString(5),
-                 Type = readader.GetBoolean(6),
-                 StartDate = readader.GetDateTime(7),
-             }
-                );
+                    int res = cmd.ExecuteNonQuery();
+                    return (res > 0) ? true : false;
+                }
             }
-            connection.Close();
+        }
+        public List<User> GetUsers()
+        {
+            var list = new List<User>();
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT * From Users", c))
+                {
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {
+                        while (readader.Read())
+                        {
+                            list.Add(
+                         new User()
+                         {
+                             Id = readader.GetInt32(0),
+                             UserName = readader.GetString(1),
+                             FirstName = readader.GetString(2),
+                             LastName = readader.GetString(3),
+                             Password = readader.GetString(4),
+                             Email = readader.GetString(5),
+                             Type = readader.GetBoolean(6),
+                             StartDate = readader.GetDateTime(7),
+                         }
+                            );
+                        }
+
+          
+                    }
+                }
+            }
             return list;
         }
 

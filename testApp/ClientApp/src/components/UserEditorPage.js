@@ -37,7 +37,7 @@ class UserEditorPage extends Component {
                     <div style={{width: '100%'}}>
                         <Field isError={this.state.error}  onConfirm={this.confirm}  placeholder={User.FirstName}  value={User.FirstName} type={'text'} label={'FirstName'}/>
             <Field isError={this.state.error} onConfirm={this.confirm} placeholder={User.LastName} value={User.LastName} type={'text'} label={'LastName'}/>
-            <Field isError={this.state.error} onConfirm={this.confirm} placeholder={'Password'} value={'Password'} type={'password'} label={'Password'}/>
+            <Field isError={this.state.error} onConfirm={this.confirm} placeholder={'Password'} value={User.Password} type={'password'} label={'Password'}/>
             <Field isError={this.state.error}  onConfirm={this.confirm} placeholder={User.Email} value={User.Email} type={'email'} label={'Email'}/>
 
             <RadioButtonGroup

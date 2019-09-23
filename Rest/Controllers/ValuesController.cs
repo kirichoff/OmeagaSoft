@@ -16,16 +16,16 @@ namespace Rest.Controllers
             db = context;
         }
         [HttpPost("[action]")]
-        public async Task<bool> AddUser(string user)
+        public bool AddUser(string user)
         {
           
                 var us = JsonConvert.DeserializeObject<User>(user);
                 if (user != null)
                 {
-                    if (await db.AddUser(us)) {
+                    if ( db.AddUser(us)) {
                         var on_reg =  db.SignIn(us.UserName, us.Password);
 
-                    return db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
+                    db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
                     }
                 }
                 return false;
@@ -33,15 +33,15 @@ namespace Rest.Controllers
           
         }
         [HttpPost("[action]")]
-        public async Task<bool> UpdateUser(string user)
+        public bool UpdateUser(string user)
         {
            
 
                var us = JsonConvert.DeserializeObject<User>(user);
                 if (us != null)
                 {
-                bool b = db.AddJournal(new Journal { Action = "Update", Date = DateTime.Now, UserId = us.Id });
-                    return await db.UpdateUser(us);
+                db.AddJournal(new Journal { Action = "Update", Date = DateTime.Now, UserId = us.Id });
+                    return  db.UpdateUser(us);
                 }
                 return false;
             
@@ -55,7 +55,7 @@ namespace Rest.Controllers
                 User user = db.SignIn(name, password);
                 if (user != null)
                 {
-                   bool b= db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
+                   db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
                     return JsonConvert.SerializeObject(
                             user
                         );
@@ -82,17 +82,17 @@ namespace Rest.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<string> admins()
+        public  string admins()
         {
-            return JsonConvert.SerializeObject(await db.Admins());
+            return JsonConvert.SerializeObject( db.Admins());
         }
         [HttpGet("[action]")]
-        public async Task<string> GetJournal()
+        public string GetJournal()
         {
 
             try
             {
-                var ls = await db.JournalUsers();
+                var ls =  db.JournalUsers();
                 return JsonConvert.SerializeObject(ls);
             }
             catch{
