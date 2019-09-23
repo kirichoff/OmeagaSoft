@@ -51,17 +51,22 @@ namespace Rest.Controllers
         public string Login(string name, string password)
         {
 
-            
+            try
+            {
                 User user = db.SignIn(name, password);
                 if (user != null)
                 {
-                   db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
+                    db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
                     return JsonConvert.SerializeObject(
                             user
                         );
                 }
                 return "false";
-           
+            }
+            catch
+            {
+                return "false";
+            }
           
         }
 
