@@ -28,8 +28,13 @@ namespace Rest.Controllers
                     if (db.AddUser(us))
                     {
                         var on_reg = db.SignIn(us.UserName, us.Password);
-
+                        if (on_reg !=null)
+                        {
                         db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
+                            return true;
+                        }
+
+
                     }
                 }
                 return false;

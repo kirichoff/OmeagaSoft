@@ -32,7 +32,7 @@ export const actionCreators = {
         Email: Email,
         StartDate: `${new Date().toISOString()}`
         }
-       let res = await rest.Modify(user,'add')
+       let res = await rest.addUser(user)
       dispatch({type:'REGISTER_TRUE',res: res })
     },
     Edit: ({

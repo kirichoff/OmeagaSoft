@@ -14,15 +14,11 @@ rest.Modify = function (user,type='update') {
         case 'delete': typeStr = 'RemoveUser'; break;
         default: typeStr = 'UpdateUser';
     }
-
-    let iso =  new  Date();
-    let date = iso.toISOString();
     let form = new FormData()
-
     form.append('user',  JSON.stringify(user))
     return  fetch(url+`api/values/${typeStr}`,{
         headers:{
-            'Authorization': 'Bearer ' + token
+         'Authorization': 'Bearer ' + token
         },
         method: 'POST',
         body: form,
@@ -31,6 +27,24 @@ rest.Modify = function (user,type='update') {
         .catch(ex=> ex)
         ;
 }
+
+
+rest.addUser = function(user){
+    let form = new FormData()
+    form.append('user',  JSON.stringify(user))
+    return  fetch(url+`api/values/AddUser`,{
+        method: 'POST',
+        body: form,
+    })
+        .then(data => data.json())
+        .catch(ex=> ex)
+        ;
+
+
+    }
+
+
+
 rest.getUsers = function(){
     let token = authHelper.getToken();
     return  fetch(url+`api/values/GetAllUsers/`,{
