@@ -15,7 +15,7 @@ namespace Rest
             connection = connectionString;
             
         }
-
+        
         public User SignIn(string name, string password)
         {           
             User user;
@@ -44,6 +44,39 @@ namespace Rest
             }
             return user;
         }
+
+
+
+        public User FindByName(string name)
+        {
+            User user;
+
+            using (SQLiteConnection c = new SQLiteConnection(connection))
+            {
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand($"SELECT * From Users where UserName='{name}'", c))
+                {
+                    using (SQLiteDataReader readader = cmd.ExecuteReader())
+                    {
+                        readader.Read();
+                        user = new User()
+                        {
+                            Id = readader.GetInt32(0),
+                            UserName = readader.GetString(1),
+                            FirstName = readader.GetString(2),
+                            LastName = readader.GetString(3),
+                            Password = readader.GetString(4),
+                            Email = readader.GetString(5),
+                            Type = readader.GetBoolean(6),
+                            StartDate = readader.GetDateTime(7),
+                        };
+                    }
+                }
+            }
+            return user;
+        }
+
+
 
         public  List<string> Admins()
         {      

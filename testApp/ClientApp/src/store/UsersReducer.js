@@ -1,12 +1,16 @@
 ﻿import rest from '../rest'
 import Hashing from "../utils/Hashing";
+import authHelper from "../utils/authHelper";
 
 const initialState = {}
 
 export const actionCreators = {
   Login: (userName,password) => async (dispatch, getState) => {
-    const user = await rest.find(userName,Hashing(password));
-    dispatch({ type: "LOGIN",User: user });
+    //const user = await rest.find(userName,Hashing(password));
+    const token = await rest.getToken(userName,Hashing(password));
+    authHelper.saveAuth(token.username,token.access_token);
+      const user = await rest.GetUser();
+      dispatch({ type: "LOGIN",User: user });
   },
   Register: ({
                UserName,
@@ -45,7 +49,7 @@ export const actionCreators = {
         console.log('USER',user)
       let res = await rest.Modify(user,'update')
         if (res){
-             user = await rest.find(user.UserName,user.Password);
+             user =  await rest.GetUser();
              console.log('USER@',user)
             dispatch({type: 'LOGIN',User: user})
         }

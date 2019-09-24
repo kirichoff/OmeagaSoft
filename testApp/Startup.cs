@@ -44,6 +44,8 @@ namespace testApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            app.UseCors(k => k.AllowAnyOrigin());
+            app.UseCors(k => k.AllowAnyHeader());
             app.UseMvc(routes =>
             {               
             });

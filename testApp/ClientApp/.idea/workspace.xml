@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9214f3e7-30a4-41b3-b699-5e0f67474b75" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/testApp/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UserEditorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserEditorPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/UsersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/UsersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/authHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/authHelper.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -276,6 +279,7 @@
       <workItem from="1569102894760" duration="7573000" />
       <workItem from="1569147741900" duration="10039000" />
       <workItem from="1569196167130" duration="240000" />
+      <workItem from="1569318986671" duration="4889000" />
     </task>
     <servers />
   </component>

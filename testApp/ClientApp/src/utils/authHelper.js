@@ -1,4 +1,8 @@
-﻿export default {
+﻿
+
+const constants = {tokenKey: 'TOKEN'};
+
+export default {
     saveAuth: (userName, token) => {
         sessionStorage.setItem(constants.tokenKey, JSON.stringify({ userName: userName, access_token: token }));
     },
@@ -27,6 +31,7 @@
 
     getToken: () => {
         let item = sessionStorage.getItem(constants.tokenKey);
+        console.log(sessionStorage)
         let token = null;
         if (item) {
             token = JSON.parse(item).access_token;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -15,10 +16,10 @@ namespace Rest.Controllers
         {
             db = context;
         }
+        
         [HttpPost("[action]")]
         public bool AddUser(string user)
-        {
-          
+        {         
                 var us = JsonConvert.DeserializeObject<User>(user);
                 if (user != null)
                 {
@@ -28,10 +29,9 @@ namespace Rest.Controllers
                     db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
                     }
                 }
-                return false;
-            
-          
+                return false;                      
         }
+        [Authorize]
         [HttpPost("[action]")]
         public bool UpdateUser(string user)
         {
@@ -66,10 +66,33 @@ namespace Rest.Controllers
             catch
             {
                 return "false";
-            }
-          
+            }          
         }
 
+        [HttpGet("[action]")]
+        public string GetUser(string name)
+        {
+
+            try
+            {
+                User user = db.FindByName(name);
+                if (user != null)
+                {
+                    db.AddJournal(new Journal { Action = "Login", Date = DateTime.Now, UserId = user.Id });
+                    return JsonConvert.SerializeObject(
+                            user
+                        );
+                }
+                return "false";
+            }
+            catch
+            {
+                return "false";
+            }
+        }
+
+
+        [Authorize]
         [HttpGet("[action]")]
         public string GetAllUsers()
         {
@@ -85,12 +108,20 @@ namespace Rest.Controllers
                 return "false";
             }
         }
-
+        [Authorize]
         [HttpGet("[action]")]
         public  string admins()
         {
-            return JsonConvert.SerializeObject( db.Admins());
+            try
+            {
+                return JsonConvert.SerializeObject(db.Admins());
+            }
+            catch
+            {
+                return "";
+            }
         }
+        [Authorize]
         [HttpGet("[action]")]
         public string GetJournal()
         {
