@@ -113,8 +113,8 @@ class AdministrationPage extends Component {
                     <tbody>
                     {
                         sorted.map(
-                        k=>
-                            <tr key={k.Id}>
+                        (k,index)=>
+                            <tr key={index}>
                                 <th>{k.UserName || ''}</th>
                                 <th>{ new Date(k.Date).toDateString()} | {new Date(k.Date).getHours()}:{new Date(k.Date).getMinutes()}</th>
                                 <th>{k.Action}</th>

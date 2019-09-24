@@ -14,51 +14,43 @@ namespace EmailSender
 {
     public class EmailSendercs
     {
-
-        MailAddress from;
-        Timer timer;
         EmailSenderOption options;
 
-        public EmailSendercs(EmailSenderOption _options)
-        {
-            timer = new Timer();
-
-            timer.Interval = 1000;//24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);
-
-            timer.AutoReset = false;
-
-            timer.Elapsed += OnTimedEvent;
-
-            timer.Enabled = true;
-            
-            options = _options;
+        public EmailSendercs( IOptions<EmailSenderOption> context)
+        {           
+            options = context.Value;
         }
 
 
         public string Request(string action)
         {
-            string res;
-            HttpWebRequest getAdmins = (HttpWebRequest)WebRequest.Create(options.Resource + action);
-            HttpWebResponse response = (HttpWebResponse)getAdmins.GetResponse();
-            using (Stream stre = response.GetResponseStream())
+            string res = "";
+            try
             {
-                using (StreamReader reader = new StreamReader(stre))
+            
+                HttpWebRequest getAdmins = (HttpWebRequest)WebRequest.Create(options.Resource + action);
+                HttpWebResponse response = (HttpWebResponse)getAdmins.GetResponse();
+                using (Stream stre = response.GetResponseStream())
                 {
-                    res = reader.ReadToEnd();
+                    using (StreamReader reader = new StreamReader(stre))
+                    {
+                        res = reader.ReadToEnd();
+                    }
                 }
+                response.Close();
             }
-            response.Close();
+            catch
+            {
+
+            }
 
             return res;
         }
         
 
 
-        public void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        public void OnTimedEvent()
         {
-
-
-
             MailAddress from = new MailAddress(options.Mail, "name");
             MailMessage m;
             MailAddress to;
@@ -102,11 +94,7 @@ namespace EmailSender
             catch
             {
 
-            }
-
-            timer.Interval = 24 * 3600000 - (DateTime.Now.Hour * 3600000 + DateTime.Now.Minute * 60000);
-
-            timer.Enabled = true;
+            }    
         }
     }
 }

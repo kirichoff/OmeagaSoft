@@ -82,7 +82,7 @@ rest.find = function (username,password) {
     return  fetch(url+`api/values/Login/?name=${username}&password=${password}`,{
         method: 'GET',
     })
-        .then(data => data.json())
+        .then(data =>  data.json())
         .catch(ex=> ex)
         ;
 }

@@ -19,33 +19,46 @@ namespace Rest.Controllers
         
         [HttpPost("[action]")]
         public bool AddUser(string user)
-        {         
+        {
+            try
+            {
                 var us = JsonConvert.DeserializeObject<User>(user);
                 if (user != null)
                 {
-                    if ( db.AddUser(us)) {
-                        var on_reg =  db.SignIn(us.UserName, us.Password);
+                    if (db.AddUser(us))
+                    {
+                        var on_reg = db.SignIn(us.UserName, us.Password);
 
-                    db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
+                        db.AddJournal(new Journal { Action = "Register", Date = DateTime.Now, UserId = on_reg.Id }); ;
                     }
                 }
-                return false;                      
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
         }
         [Authorize]
         [HttpPost("[action]")]
         public bool UpdateUser(string user)
         {
-           
 
-               var us = JsonConvert.DeserializeObject<User>(user);
+            try
+            {
+                var us = JsonConvert.DeserializeObject<User>(user);
                 if (us != null)
                 {
-                db.AddJournal(new Journal { Action = "Update", Date = DateTime.Now, UserId = us.Id });
-                    return  db.UpdateUser(us);
+                    db.AddJournal(new Journal { Action = "Update", Date = DateTime.Now, UserId = us.Id });
+                    return db.UpdateUser(us);
                 }
                 return false;
-            
-           
+
+            }
+            catch
+            {
+                return false;
+            }
         }
         [HttpGet("[action]")]
         public string Login(string name, string password)
@@ -68,7 +81,7 @@ namespace Rest.Controllers
                 return "false";
             }          
         }
-
+        [Authorize]
         [HttpGet("[action]")]
         public string GetUser(string name)
         {
@@ -108,7 +121,7 @@ namespace Rest.Controllers
                 return "false";
             }
         }
-        [Authorize]
+
         [HttpGet("[action]")]
         public  string admins()
         {
@@ -121,7 +134,7 @@ namespace Rest.Controllers
                 return "";
             }
         }
-        [Authorize]
+
         [HttpGet("[action]")]
         public string GetJournal()
         {

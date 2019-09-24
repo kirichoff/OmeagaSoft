@@ -27,18 +27,16 @@ namespace EmailSender
         public void ConfigureServices(IServiceCollection services)
         {
 
-          ;
-            services.AddSingleton<EmailSendercs>(new EmailSendercs(new EmailSenderOption(){
-                Mail = Configuration.GetSection("Setings").GetSection("Mail").Value,
-                MessegeBody = Configuration.GetSection("Setings").GetSection("MessegeBody").Value,
-                Password= Configuration.GetSection("Setings").GetSection("Password").Value,
-                Resource = Configuration.GetSection("Setings").GetSection("Resource").Value,
-                SmptClient = Configuration.GetSection("Setings").GetSection("SmptClient").Value,
-                Subject = Configuration.GetSection("Setings").GetSection("Subject").Value,
-                Port = Convert.ToInt32( Configuration.GetSection("Setings").GetSection("Port").Value),
-                Key = Configuration.GetSection("Setings").GetSection("key").Value
-            }));
-            
+
+
+          
+            services.AddTransient<EmailSendercs>();
+
+            services.Configure<EmailSenderOption>(Configuration);
+
+            services.AddHostedService<TimedHostedService>();
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

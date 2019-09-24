@@ -8,8 +8,11 @@ export const actionCreators = {
   Login: (userName,password) => async (dispatch, getState) => {
     //const user = await rest.find(userName,Hashing(password));
     const token = await rest.getToken(userName,Hashing(password));
-    authHelper.saveAuth(token.username,token.access_token);
-      const user = await rest.GetUser();
+      let user= null;
+    if (token['access_token']){
+        authHelper.saveAuth(token.username,token.access_token);
+          user = await rest.GetUser();
+    }
       dispatch({ type: "LOGIN",User: user });
   },
   Register: ({
@@ -29,7 +32,6 @@ export const actionCreators = {
         Email: Email,
         StartDate: `${new Date().toISOString()}`
         }
-
        let res = await rest.Modify(user,'add')
       dispatch({type:'REGISTER_TRUE',res: res })
     },

@@ -22,7 +22,6 @@ class TestCompponent extends Component {
 
         cl2=()=>{
         console.log('cl')
-            //https://randomuser.me/api/?results=10
         let url = 'https://localhost:44336/api/values/GetAllUsers'
             fetch(url,{method: 'GET',})
                 .then(res=>console.log('res',res.text().then(r=>console.log(r))))
